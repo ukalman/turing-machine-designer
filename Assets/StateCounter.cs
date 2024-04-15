@@ -32,7 +32,7 @@ public class StateCounter : MonoBehaviour
     }
 
     // Call this method when the increment button is clicked or input field is increased
-    public void IncrementStateCount()
+    private void IncrementStateCount()
     {
         if (_stateCount < MaxStateCount)
         {
@@ -42,7 +42,7 @@ public class StateCounter : MonoBehaviour
     }
 
     // Call this method when the decrement button is clicked or input field is decreased
-    public void DecrementStateCount()
+    private void DecrementStateCount()
     {
         if (_stateCount > MinStateCount)
         {
@@ -59,16 +59,36 @@ public class StateCounter : MonoBehaviour
     }
 
     // Validate and apply the state count when changed from the keyboard
-    public void StateCountChanged()
+    private void StateCountChanged()
     {
-        // Validate the input and correct it if necessary
-        if (!int.TryParse(stateCountInputField.text, out _stateCount))
+        if (IsStateCountValid())
         {
-            _stateCount = MinStateCount; // Default to min if parse fails
+            // The input is valid, so update the state count
+            _stateCount = int.Parse(stateCountInputField.text);
+            UpdateButtonInteractivity();
         }
-        
-        _stateCount = Mathf.Clamp(_stateCount, MinStateCount, MaxStateCount);
-        stateCountInputField.text = _stateCount.ToString(); // Correct the displayed value
-        UpdateButtonInteractivity();
+        else
+        {
+            // The input is not valid, reset to the last valid state count
+            stateCountInputField.text = _stateCount.ToString();
+        }
+    }
+
+    public bool IsStateCountValid()
+    {
+        int parsedStateCount;
+        // Try to parse the input text to an integer and check if it's within the specified range
+        if (int.TryParse(stateCountInputField.text, out parsedStateCount) &&
+            parsedStateCount >= MinStateCount &&
+            parsedStateCount <= MaxStateCount)
+        {
+            // Input is acceptable: it's an integer within the range of 1 to 30
+            return true;
+        }
+        else
+        {
+            // Input is not acceptable
+            return false;
+        }
     }
 }

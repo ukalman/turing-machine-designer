@@ -19,6 +19,7 @@ namespace Enums
     {
         None,
         Start,
+        TMDesign,
         LevelPrep,
         Gameplay,
         LevelEnd,

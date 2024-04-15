@@ -2,49 +2,61 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class AlphabetManager : MonoBehaviour
 {
-    public TMP_InputField inputSymbolsField;
-    public TMP_InputField tapeSymbolsField;
-    public TMP_Text inputSymbolsText;
-    public TMP_Text tapeSymbolsText;
     
-    private HashSet<char> inputSymbols = new HashSet<char>();
-    private HashSet<char> tapeSymbols = new HashSet<char>();
-
-
+    public HashSet<char> InputSymbols = new HashSet<char>();
+    public HashSet<char> TapeSymbols = new HashSet<char>();
+    
+    public TMP_InputField InputSymbolsField;
+    public TMP_InputField TapeSymbolsField;
+    public TMP_Text InputSymbolsText;
+    public TMP_Text TapeSymbolsText;
+    
     private void Start()
     {
+        InputSymbolsField.onValueChanged.AddListener(delegate { LimitInputToSingleCharacter(InputSymbolsField); });
+        TapeSymbolsField.onValueChanged.AddListener(delegate { LimitInputToSingleCharacter(TapeSymbolsField); });
+
         UpdateDisplay();
+    }
+    
+    private void LimitInputToSingleCharacter(TMP_InputField inputField)
+    {
+        if (inputField.text.Length > 1)
+        {
+            inputField.text = inputField.text.Substring(0, 1);
+        }
     }
 
     // Call to add a symbol to the input alphabet
-    public void AddInputSymbol()
+    private void AddInputSymbol()
     {
         Debug.Log("Input symbol added");
         char symbol;
-        if (char.TryParse(inputSymbolsField.text, out symbol))
+        if (char.TryParse(InputSymbolsField.text, out symbol))
         {
-            if (inputSymbols.Add(symbol))
+            if (InputSymbols.Add(symbol))
             {
-                tapeSymbols.Add(symbol); // Add to tape symbols if not already present
+                TapeSymbols.Add(symbol); // Add to tape symbols if not already present
                 UpdateDisplay();
             }
         }
     }
 
     // Call to add a symbol to the tape alphabet
-    public void AddTapeSymbol()
+    private void AddTapeSymbol()
     {
         Debug.Log("Tape symbol added");
         char symbol;
-        if (char.TryParse(tapeSymbolsField.text, out symbol))
+        if (char.TryParse(TapeSymbolsField.text, out symbol))
         {
-            if (!inputSymbols.Contains(symbol)) // Only add if not in input symbols
+            if (!InputSymbols.Contains(symbol)) // Only add if not in input symbols
             {
-                tapeSymbols.Add(symbol);
+                TapeSymbols.Add(symbol);
                 UpdateDisplay();
             }
         }
@@ -52,27 +64,27 @@ public class AlphabetManager : MonoBehaviour
     
 
     // Call to remove a symbol from the alphabets
-    public void RemoveInputSymbol()
+    private void RemoveInputSymbol()
     {
         Debug.Log("Input Symbol Remove");
         char symbol;
-        if (char.TryParse(inputSymbolsField.text, out symbol))
+        if (char.TryParse(InputSymbolsField.text, out symbol))
         {
-            inputSymbols.Remove(symbol);
-            tapeSymbols.Remove(symbol);
+            InputSymbols.Remove(symbol);
+            TapeSymbols.Remove(symbol);
             UpdateDisplay();
         }
     }
     
-    public void RemoveTapeSymbol()
+    private void RemoveTapeSymbol()
     {
         Debug.Log("Tape Symbol Remove");
         char symbol;
-        if (char.TryParse(tapeSymbolsField.text, out symbol))
+        if (char.TryParse(TapeSymbolsField.text, out symbol))
         {
-            if (!inputSymbols.Contains(symbol))
+            if (!InputSymbols.Contains(symbol))
             {
-                tapeSymbols.Remove(symbol);
+                TapeSymbols.Remove(symbol);
                 UpdateDisplay();
             }
            
@@ -83,7 +95,53 @@ public class AlphabetManager : MonoBehaviour
     private void UpdateDisplay()
     {
         Debug.Log("Update Display");
-        inputSymbolsText.text = "{" + string.Join(",", inputSymbols) + "}";
-        tapeSymbolsText.text = "{" + string.Join(",", tapeSymbols) + "}";
+        InputSymbolsText.text = "{" + string.Join(",", InputSymbols) + "}";
+        TapeSymbolsText.text = "{" + string.Join(",", TapeSymbols) + "}";
     }
+
+    private bool ValidateInputSymbols()
+    {
+        // Check if InputSymbols is not empty
+        if (InputSymbols.Count == 0)
+        {
+            Debug.Log("InputSymbols set cannot be empty.");
+            return false;
+        }
+    
+        // Check if all elements in InputSymbols are also in TapeSymbols
+        foreach (var symbol in InputSymbols)
+        {
+            if (!TapeSymbols.Contains(symbol))
+            {
+                Debug.Log($"Symbol '{symbol}' in InputSymbols is not present in TapeSymbols.");
+                return false;
+            }
+        }
+
+        // If all validations pass
+        return true;
+    }
+
+    private bool ValidateTapeSymbols()
+    {
+        // Check if TapeSymbols is not empty and contains all InputSymbols
+        if (TapeSymbols.Count == 0 || !InputSymbols.IsSubsetOf(TapeSymbols))
+        {
+            Debug.Log("TapeSymbols set cannot be empty and must contain all InputSymbols.");
+            return false;
+        }
+    
+        // If all validations pass
+        return true;
+    }
+    
+    public bool AreAlphabetsValid()
+    {
+        return ValidateInputSymbols() && ValidateTapeSymbols();
+    }
+
+    
+    
+    
+    
 }

@@ -19,6 +19,7 @@ namespace Managers
         
         
         public UnityAction OnGameStart;
+        public UnityAction OnTMDesign;
         public UnityAction OnLevelPrep;
         public UnityAction OnGameplay;
         public UnityAction OnLevelEnd;
@@ -60,6 +61,9 @@ namespace Managers
                 case GameStates.Start:
                     OnGameStart?.Invoke();
                     break;
+                case GameStates.TMDesign:
+                    OnTMDesign?.Invoke();
+                    break;
                 case GameStates.LevelPrep:
                     OnLevelPrep?.Invoke();
                     break;
@@ -86,6 +90,7 @@ namespace Managers
         }
         
         public void StartGame() => ChangeGameState(GameStates.Start);
+        public void StartTMDesign() => ChangeGameState(GameStates.TMDesign);
         public void PrepLevel() => ChangeGameState(GameStates.LevelPrep);
         public void StartGameplay() => ChangeGameState(GameStates.Gameplay);
         public void WinGame() => ChangeGameState(GameStates.Win);

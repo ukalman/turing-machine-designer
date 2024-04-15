@@ -120,7 +120,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3131700503663033862}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2261200919991720439}
+        m_TargetAssemblyTypeName: UI.TMPreferencesPanel.TMPreferencesPanelController,
+          Assembly-CSharp
+        m_MethodName: OnReadyPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &331673804962407008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1496,7 +1509,7 @@ GameObject:
   - component: {fileID: 4060386337636945387}
   - component: {fileID: 2261200919991720439}
   m_Layer: 5
-  m_Name: TMDesignPanel
+  m_Name: TMPreferencesPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1545,6 +1558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0383e8959fdf4c043ac7c65153bba6f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stateCounter: {fileID: 3565206381641716410}
+  alphabetManager: {fileID: 1482590828366581534}
 --- !u!1 &4858500253445686488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2440,10 +2455,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eeed30e3e526af41906b30d561e3d1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputSymbolsField: {fileID: 1754467932518266660}
-  tapeSymbolsField: {fileID: 5532211512825767022}
-  inputSymbolsText: {fileID: 8623050182769809231}
-  tapeSymbolsText: {fileID: 5639340590807452075}
+  InputSymbolsField: {fileID: 1754467932518266660}
+  TapeSymbolsField: {fileID: 5532211512825767022}
+  InputSymbolsText: {fileID: 8623050182769809231}
+  TapeSymbolsText: {fileID: 5639340590807452075}
 --- !u!1 &6366801945861877024
 GameObject:
   m_ObjectHideFlags: 0

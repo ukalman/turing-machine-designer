@@ -10,6 +10,9 @@ namespace Data
         public int StateCount;
         public HashSet<char> InputSymbols;
         public HashSet<char> TapeSymbols;
+        
+        
+        
 
     }
 }

@@ -28,7 +28,8 @@ namespace UI.MainMenu
         public void Play()
         {
             Debug.Log("Play button clicked");
-            GameManager.Instance.PrepLevel();
+            //GameManager.Instance.PrepLevel();
+            GameManager.Instance.StartTMDesign();
         }
         
     }

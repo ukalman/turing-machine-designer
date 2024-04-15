@@ -27,6 +27,7 @@ namespace Managers
         {
           
             GameManager.Instance.OnGameStart += Play;
+            GameManager.Instance.OnTMDesign += OnStartTMDesign;
             GameManager.Instance.OnLevelPrep += OnLevelInitialize;
             
             GameManager.Instance.OnGameWin += OnGameWin;
@@ -48,15 +49,21 @@ namespace Managers
         {
            
             GameManager.Instance.OnGameStart -= Play;
+            GameManager.Instance.OnTMDesign -= OnStartTMDesign;
             GameManager.Instance.OnLevelPrep -= OnLevelInitialize;
             
             GameManager.Instance.OnGameWin -= OnGameWin;
             GameManager.Instance.OnGameLose -= OnGameLose;
         }
 
+        private void OnStartTMDesign()
+        {
+            CoreUISignals.Instance.OnOpenPanel?.Invoke(UIPanelTypes.TMPreferences, 0); 
+        }
+        
         private void OnLevelInitialize()
         {
-            CoreUISignals.Instance.OnOpenPanel?.Invoke(UIPanelTypes.TMPreferences, 0);
+            
         }
 
         private void Play()
