@@ -1,6 +1,5 @@
 namespace Enums
 {
-    public enum Direction { Left = 0, Right = 1 }
     public enum StateType { Normal = 0, Accept = 1, Reject = -1 }
     
     public enum UIPanelTypes
@@ -9,6 +8,8 @@ namespace Enums
         MaxScores,
         Settings,
         TMPreferences,
+        TMStateRules,
+        TMStartExecution,
         Level,
         Pause,
         Win,
@@ -20,6 +21,8 @@ namespace Enums
         None,
         Start,
         TMDesign,
+        TMStateRules,
+        TMStartExecution,
         LevelPrep,
         Gameplay,
         LevelEnd,

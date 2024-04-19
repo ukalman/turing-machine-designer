@@ -10,5 +10,6 @@ namespace Signals
         public UnityAction<UIPanelTypes, int> OnOpenPanel = delegate { };
         public UnityAction<int> OnClosePanel = delegate { };
         public UnityAction OnCloseAllPanels = delegate { };
+        
     }
 }

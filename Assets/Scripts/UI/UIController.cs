@@ -61,10 +61,10 @@ namespace UI
         [Button("Close Panel")]
         private void OnClosePanel(int value)
         {
-            if (layers[value].childCount <= 0 || (layers[value].childCount == 1 && layers[value].GetChild(0).tag.Equals("Background"))) return;
+            if (layers[value].childCount <= 0) return;
 
 #if UNITY_EDITOR
-            DestroyImmediate(layers[value].GetChild(1).gameObject);
+            DestroyImmediate(layers[value].GetChild(0).gameObject);
 #else
                 Destroy(layers[value].GetChild(0).gameObject);
 #endif

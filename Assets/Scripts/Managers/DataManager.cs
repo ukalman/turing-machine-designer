@@ -5,6 +5,10 @@ using Signals;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Signals;
+using Unity.VisualScripting;
+using TM;
+using State = TM.State;
+using Enums;
 
 
 namespace Managers
@@ -13,6 +17,7 @@ namespace Managers
     {
         public static DataManager Instance { get; private set; }
         public MainData mainData;
+        public List<State> States; // Every state has its transition functions
         
         
         private void Awake()
@@ -40,11 +45,28 @@ namespace Managers
             TMSignals.Instance.OnTMPreferencesDetermined -= OnTMPreferencesDetermined;
         }
 
+        private void SetupStates()
+        {
+            States = new List<State>();
+            // Create normal states based on the state count
+            for (int i = 0; i < mainData.StateCount; i++)
+            {
+                State newState = new State($"q{i}") { Type = StateType.Normal };
+                States.Add(newState);
+            }
+            
+            // Add special states: accept and reject
+            States.Add(new State("qaccept") { Type = StateType.Accept }); // Accept state
+            States.Add(new State("qreject") { Type = StateType.Reject }); // Reject state
+        }
+
         private void OnTMPreferencesDetermined(int stateCount, HashSet<char> inputSymbols, HashSet<char> tapeSymbols)
         {
             mainData.StateCount = stateCount;
             mainData.InputSymbols = inputSymbols;
             mainData.TapeSymbols = tapeSymbols;
+            
+            SetupStates();
             
             //SavePrefs();
             

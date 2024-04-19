@@ -1560,6 +1560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateCounter: {fileID: 3565206381641716410}
   alphabetManager: {fileID: 1482590828366581534}
+  readyButton: {fileID: 5043944565873692094}
 --- !u!1 &4858500253445686488
 GameObject:
   m_ObjectHideFlags: 0
@@ -3407,7 +3408,7 @@ GameObject:
   - component: {fileID: 4884223479069701752}
   - component: {fileID: 2525959160725573872}
   m_Layer: 5
-  m_Name: NameText
+  m_Name: HeaderText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

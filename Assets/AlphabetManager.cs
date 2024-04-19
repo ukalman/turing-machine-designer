@@ -104,7 +104,7 @@ public class AlphabetManager : MonoBehaviour
         // Check if InputSymbols is not empty
         if (InputSymbols.Count == 0)
         {
-            Debug.Log("InputSymbols set cannot be empty.");
+            Debug.Log("InputSymbols set cannot be empty."); 
             return false;
         }
     

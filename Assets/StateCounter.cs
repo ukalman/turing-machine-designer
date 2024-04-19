@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class StateCounter : MonoBehaviour
@@ -8,7 +9,7 @@ public class StateCounter : MonoBehaviour
     public Button incrementButton;
     public Button decrementButton;
     
-    private int _stateCount = 1;
+    [FormerlySerializedAs("_stateCount")] public int StateCount = 1;
     private const int MinStateCount = 1;
     private const int MaxStateCount = 30;
 
@@ -18,7 +19,7 @@ public class StateCounter : MonoBehaviour
         stateCountInputField.onValueChanged.AddListener(delegate { StateCountChanged(); });
 
         // Initialize input field value
-        stateCountInputField.text = _stateCount.ToString();
+        stateCountInputField.text = StateCount.ToString();
 
         // Optionally, disable the buttons if the count is at the min or max
         UpdateButtonInteractivity();
@@ -27,16 +28,16 @@ public class StateCounter : MonoBehaviour
     // Update button interactivity based on the current state count
     private void UpdateButtonInteractivity()
     {
-        incrementButton.interactable = _stateCount < MaxStateCount;
-        decrementButton.interactable = _stateCount > MinStateCount;
+        incrementButton.interactable = StateCount < MaxStateCount;
+        decrementButton.interactable = StateCount > MinStateCount;
     }
 
     // Call this method when the increment button is clicked or input field is increased
     private void IncrementStateCount()
     {
-        if (_stateCount < MaxStateCount)
+        if (StateCount < MaxStateCount)
         {
-            _stateCount++;
+            StateCount++;
             UpdateStateCountDisplay();
         }
     }
@@ -44,9 +45,9 @@ public class StateCounter : MonoBehaviour
     // Call this method when the decrement button is clicked or input field is decreased
     private void DecrementStateCount()
     {
-        if (_stateCount > MinStateCount)
+        if (StateCount > MinStateCount)
         {
-            _stateCount--;
+            StateCount--;
             UpdateStateCountDisplay();
         }
     }
@@ -54,7 +55,7 @@ public class StateCounter : MonoBehaviour
     // Update the UI input field display
     private void UpdateStateCountDisplay()
     {
-        stateCountInputField.text = _stateCount.ToString();
+        stateCountInputField.text = StateCount.ToString();
         UpdateButtonInteractivity();
     }
 
@@ -64,13 +65,13 @@ public class StateCounter : MonoBehaviour
         if (IsStateCountValid())
         {
             // The input is valid, so update the state count
-            _stateCount = int.Parse(stateCountInputField.text);
+            StateCount = int.Parse(stateCountInputField.text);
             UpdateButtonInteractivity();
         }
         else
         {
             // The input is not valid, reset to the last valid state count
-            stateCountInputField.text = _stateCount.ToString();
+            stateCountInputField.text = StateCount.ToString();
         }
     }
 
