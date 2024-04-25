@@ -16,6 +16,9 @@ namespace Managers
         
         private GameStates _currentGameState = GameStates.None;
         public GameStates CurrentGameState => _currentGameState;
+
+        public Transform GameFrame;
+        public GameObject TMPrefab;
         
         
         public UnityAction OnGameStart;
@@ -46,6 +49,7 @@ namespace Managers
 
         private void Start()
         {
+            OnTMStartExecution += () => { Instantiate(TMPrefab, GameFrame);};
             ChangeGameState(GameStates.Start); 
         }
         

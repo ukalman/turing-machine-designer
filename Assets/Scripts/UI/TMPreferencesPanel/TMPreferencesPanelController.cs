@@ -68,7 +68,10 @@ namespace UI.TMPreferencesPanel
                 Debug.Log("state count: " + _stateCount);
                 Debug.Log("input symbols: " + _inputSymbols);
                 Debug.Log("tape symbols: " + _tapeSymbols);
-                TMSignals.Instance.OnTMPreferencesDetermined?.Invoke(_stateCount, _inputSymbols, _tapeSymbols);
+
+                //_inputSymbols.Add('_');
+                
+                TMSignals.Instance.OnTMPreferencesDetermined?.Invoke(_stateCount, _tapeSymbols, _tapeSymbols);
                 GameManager.Instance.StartTMStateRules();
             }
             else

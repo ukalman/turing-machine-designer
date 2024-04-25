@@ -1,4 +1,5 @@
 using System.Data;
+using System.Text;
 using TM;
 using TMPro;
 using UnityEngine;
@@ -9,26 +10,23 @@ namespace UI.TMStateRulesPanel
     {
         public TMP_Text RuleDisplayText;
 
-        private string _ruleDisplayText;
-
         public void SetRuleDetails(TransitionRule rule, string currentStateName)
         {
-            _ruleDisplayText = "(";
-            _ruleDisplayText += currentStateName;
-            _ruleDisplayText += ",";
-            _ruleDisplayText += rule.InputSymbol;
-            _ruleDisplayText += ") = (";
-            _ruleDisplayText += rule.NextState;
-            _ruleDisplayText += ",";
-            _ruleDisplayText += rule.WriteSymbol;
-            _ruleDisplayText += ",";
-            _ruleDisplayText += rule.MoveDirection.ToString();
-            _ruleDisplayText += ")";
+            var ruleDisplayBuilder = new StringBuilder();
+            ruleDisplayBuilder.Append("* δ(")
+                .Append(currentStateName)
+                .Append(",")
+                .Append(rule.InputSymbol)
+                .Append(") = (")
+                .Append(rule.NextState)
+                .Append(",")
+                .Append(rule.WriteSymbol)
+                .Append(",")
+                .Append(rule.MoveDirection.ToString())
+                .Append(")");
 
-            RuleDisplayText.text = _ruleDisplayText;
-
-
-        }
+            RuleDisplayText.text = ruleDisplayBuilder.ToString();
+        }        
         
         
         

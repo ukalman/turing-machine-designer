@@ -29,6 +29,7 @@ namespace Managers
             GameManager.Instance.OnGameStart += Play;
             GameManager.Instance.OnTMDesign += OnStartTMDesign;
             GameManager.Instance.OnTMStateRules += OnStartTMStateRules;
+            GameManager.Instance.OnTMStartExecution += OnStartTMExecution;
             GameManager.Instance.OnLevelPrep += OnLevelInitialize;
             
             GameManager.Instance.OnGameWin += OnGameWin;
@@ -52,6 +53,7 @@ namespace Managers
             GameManager.Instance.OnGameStart -= Play;
             GameManager.Instance.OnTMDesign -= OnStartTMDesign;
             GameManager.Instance.OnTMStateRules -= OnStartTMStateRules;
+            GameManager.Instance.OnTMStartExecution -= OnStartTMExecution;
             GameManager.Instance.OnLevelPrep -= OnLevelInitialize;
             
             GameManager.Instance.OnGameWin -= OnGameWin;
@@ -70,7 +72,7 @@ namespace Managers
 
         private void OnStartTMExecution()
         {
-            CoreUISignals.Instance.OnOpenPanel?.Invoke(UIPanelTypes.TMStartExecution, 0);
+            CoreUISignals.Instance.OnOpenPanel?.Invoke(UIPanelTypes.TMExecution, 0);
         }
         
         private void OnLevelInitialize()

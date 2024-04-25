@@ -38,6 +38,7 @@ namespace Managers
         private void Start()
         {
             TMSignals.Instance.OnTMPreferencesDetermined += OnTMPreferencesDetermined;
+            TMSignals.Instance.OnTMInputStringSet += OnTMExecuted;
         }
 
         private void OnDisable()
@@ -70,8 +71,15 @@ namespace Managers
             
             //SavePrefs();
             
-            
         }
+
+        private void OnTMExecuted(string inputString)
+        {
+            mainData.InputString = inputString;
+            TMSignals.Instance.OnTMExecuted?.Invoke();
+        }
+        
+        
 
         private void SavePrefs()
         {

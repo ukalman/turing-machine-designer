@@ -9,7 +9,7 @@ namespace Enums
         Settings,
         TMPreferences,
         TMStateRules,
-        TMStartExecution,
+        TMExecution,
         Level,
         Pause,
         Win,

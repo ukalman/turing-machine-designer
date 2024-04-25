@@ -21,6 +21,9 @@ public class AlphabetManager : MonoBehaviour
         InputSymbolsField.onValueChanged.AddListener(delegate { LimitInputToSingleCharacter(InputSymbolsField); });
         TapeSymbolsField.onValueChanged.AddListener(delegate { LimitInputToSingleCharacter(TapeSymbolsField); });
 
+        TapeSymbols.Add('_');
+        
+        
         UpdateDisplay();
     }
     
