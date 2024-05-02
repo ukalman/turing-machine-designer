@@ -1,0 +1,364 @@
+fileFormatVersion: 2
+guid: f33fa28be5eb27c4d93ea2f7efb85b3b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 348
+        width: 135
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9605029ebe05b20488a65ad7e36cae66
+      internalID: 1229405160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 348
+        width: 146
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f641339a32e3c4582d58c198184087
+      internalID: 1420934728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 348
+        width: 143
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b668cf0e6811ee34a948d069aff07d0e
+      internalID: 1134542201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 189
+        width: 131
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac2de08fdab5734887483f7ab1893ed
+      internalID: -426987924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 189
+        width: 145
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee35519ffc227234e826d8dbf766d961
+      internalID: 65759088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 189
+        width: 143
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3674b3e898154ac4dbf8f4f018bd354e
+      internalID: -958780018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 27
+        width: 137
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bcd4a799c5ff9745b325d863ef9e3fc
+      internalID: 1492305989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 27
+        width: 145
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac4a880920d50544a8bd03a9f61c2c9
+      internalID: 1727347724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 27
+        width: 144
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9f9edb40a7c04d4bac70b6200c1ba88
+      internalID: 1467520140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 04460621aca5e244a89df3072fa8bf2a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_0: 1229405160
+      DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_1: 1420934728
+      DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_2: 1134542201
+      DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_3: -426987924
+      DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_4: 65759088
+      DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_5: -958780018
+      DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_6: 1492305989
+      DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_7: 1727347724
+      DALL_E_2024-05-02_16.53.59_-_Create_a_series_of_UI_sprite_buttons_designed_as_start_buttons_for_a_hypercasual_futuristic_game_interface._The_buttons_should_blend_the_sleek__futuri-removebg-preview_8: 1467520140
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

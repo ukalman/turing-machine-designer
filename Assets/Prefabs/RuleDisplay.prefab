@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u03B4"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 58cc1953e18c5014aa58683132552a05, type: 2}
+  m_sharedMaterial: {fileID: 5672946493094850168, guid: 58cc1953e18c5014aa58683132552a05, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 7827186617311905802}
   m_Layer: 5
   m_Name: RuleDisplay
-  m_TagString: Untagged
+  m_TagString: Rule Display
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,3 +224,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RuleDisplayText: {fileID: 3445276838052295934}
+  RuleIndex: 0

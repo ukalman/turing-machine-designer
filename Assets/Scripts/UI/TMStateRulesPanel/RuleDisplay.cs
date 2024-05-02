@@ -3,14 +3,24 @@ using System.Text;
 using TM;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 namespace UI.TMStateRulesPanel
 {
-    public class RuleDisplay : MonoBehaviour
+    public class RuleDisplay : MonoBehaviour, IPointerClickHandler
     {
         public TMP_Text RuleDisplayText;
+        public int RuleIndex;
+        
+        public UnityAction<GameObject> OnClicked;
 
-        public void SetRuleDetails(TransitionRule rule, string currentStateName)
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            OnClicked?.Invoke(this.gameObject);
+        }
+        
+        public void SetRuleDetails(TransitionRule rule, string currentStateName, int ruleIndex)
         {
             var ruleDisplayBuilder = new StringBuilder();
             ruleDisplayBuilder.Append("* δ(")
@@ -24,8 +34,9 @@ namespace UI.TMStateRulesPanel
                 .Append(",")
                 .Append(rule.MoveDirection.ToString())
                 .Append(")");
-
+            
             RuleDisplayText.text = ruleDisplayBuilder.ToString();
+            RuleIndex = ruleIndex;
         }        
         
         

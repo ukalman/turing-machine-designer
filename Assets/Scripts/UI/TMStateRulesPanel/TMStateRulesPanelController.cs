@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Managers;
@@ -18,6 +19,8 @@ namespace UI.TMStateRulesPanel
         public TMP_Dropdown nextDirectionDropdown;
     
         public Button addRuleButton;
+        public Button editRuleButton;
+        public Button removeRuleButton;
         public Button nextButton;
         public Button previousButton;
         public Button finishButton;
@@ -28,14 +31,21 @@ namespace UI.TMStateRulesPanel
         //private HashSet<char> _tapeSymbols;
         private int _currentStateIndex = 0;
     
-        public GameObject ruleDisplayPrefab; 
-    
+        public GameObject ruleDisplayPrefab;
+        public GameObject selectedRuleDisplay;
+        
 
         private void Start()
         {
             SetupStates();
             PopulateDropdowns();
             UpdateStateDisplay();
+            UpdateButtonInteractivity();
+        }
+
+        private void Update()
+        {
+            UpdateButtonInteractivity();
         }
 
         private void SetupStates()
@@ -43,12 +53,24 @@ namespace UI.TMStateRulesPanel
             _states = DataManager.Instance.States;
 
         }
-    
-    
 
+        private void UpdateButtonInteractivity()
+        {
+            if (selectedRuleDisplay != null)
+            {
+                editRuleButton.interactable = true;
+                removeRuleButton.interactable = true;
+            }
+            else
+            {
+                editRuleButton.interactable = false;
+                removeRuleButton.interactable = false;
+            }
+        }
+        
         public void AddTransitionRule()
         {
-            // Create a new rule based on the dropdown selections and add it to the current state
+            
             var newRule = new TransitionRule
             {
                 InputSymbol = GetSelectedInputSymbol(),
@@ -57,13 +79,67 @@ namespace UI.TMStateRulesPanel
                 MoveDirection = GetSelectedMoveDirection()
             };
 
+            if (_states[_currentStateIndex].TransitionRules.Contains(newRule))
+            {
+                Debug.Log("Already existing rule!");
+                return;    
+            }
+
             _states[_currentStateIndex].AddRule(newRule);
             UpdateRulesListDisplay();
         }
+        
+        public void RemoveTransitionRule()
+        {
+            if (selectedRuleDisplay)
+            {
+                _states[_currentStateIndex].TransitionRules.RemoveAt(selectedRuleDisplay.GetComponent<RuleDisplay>().RuleIndex);
+                Destroy(selectedRuleDisplay);
+                
+                UpdateRulesListDisplay();
+                Debug.Log("Rule deleted!");
+                return;
+            }
+            
+            Debug.Log("No rule selected!");
+            
+        }
+        
+        private void HandleRuleDisplayClicked(GameObject ruleDisplay)
+        {
 
+            if (selectedRuleDisplay != null)
+            {
+                SetRuleDisplayOpacity(selectedRuleDisplay, 0f); 
+            }
+            
+            selectedRuleDisplay = ruleDisplay;
+            
+            SetRuleDisplayOpacity(selectedRuleDisplay, 1.0f); 
+        }
+
+        private void SetRuleDisplayOpacity(GameObject ruleDisplay, float opacity)
+        {
+            var imageComponent = ruleDisplay.GetComponent<Image>();
+            if (imageComponent != null)
+            {
+                Color color = imageComponent.color;
+                color.a = opacity;
+                imageComponent.color = color;
+            }
+        }
         private void UpdateRulesListDisplay()
         {
             Debug.Log("Update rules list display");
+            foreach (Transform child in rulesListContainer)
+            {
+                var ruleDisplayScript = child.GetComponent<RuleDisplay>();
+                if (ruleDisplayScript != null)
+                {
+                    ruleDisplayScript.OnClicked -= HandleRuleDisplayClicked;
+                }
+            }
+    
             // Clear existing rule displays
             foreach (Transform child in rulesListContainer)
             {
@@ -71,13 +147,27 @@ namespace UI.TMStateRulesPanel
             }
 
             // Instantiate a new rule display prefab for each rule in the current state
+            for (int i = 0; i < _states[_currentStateIndex].TransitionRules.Count; i++)
+            {
+                var ruleDisplay = Instantiate(ruleDisplayPrefab, rulesListContainer);
+                var ruleDisplayScript = ruleDisplay.GetComponent<RuleDisplay>();
+        
+                // Subscribe to the OnClicked event
+                ruleDisplayScript.OnClicked += HandleRuleDisplayClicked;
+
+                // Set the rule details
+                ruleDisplayScript.SetRuleDetails(_states[_currentStateIndex].TransitionRules[i], _states[_currentStateIndex].StateName, i);
+            }
+            
+            /*
             foreach (var rule in _states[_currentStateIndex].TransitionRules)
             {
                 var ruleDisplay = Instantiate(ruleDisplayPrefab, rulesListContainer);
          
                 var ruleDisplayScript = ruleDisplay.GetComponent<RuleDisplay>();
-                ruleDisplayScript.SetRuleDetails(rule, _states[_currentStateIndex].StateName);
+                ruleDisplayScript.SetRuleDetails(rule, _states[_currentStateIndex].StateName,);
             }
+            */
         }
         // Methods for getting selected values from dropdowns
         private char GetSelectedInputSymbol()
